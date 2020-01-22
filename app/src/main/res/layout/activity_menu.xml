@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.jetpack.mvvm.viewmodel.MenuViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btDataBinding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewmodel.dbText}"
+                android:onClick="@{() -> viewmodel.onDataBindingClick()}" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btViewModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewmodel.vmText}"
+                android:onClick="@{() -> viewmodel.onViewModelClick()}"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btLiveData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewmodel.liveText}"
+                android:onClick="@{() -> viewmodel.onLiveDataViewModelClick()}" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+</layout>

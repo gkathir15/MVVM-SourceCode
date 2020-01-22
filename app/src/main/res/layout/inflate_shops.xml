@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="response"
+            type="com.jetpack.mvvm.model.BottleShopResponse" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="@{response.name}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textAlignment="textEnd" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWebUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvName"
+            android:text="@{TextUtils.isEmpty(response.websiteUrl) ? `No Data Available` : response.websiteUrl}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWebUrl"
+            android:text="@{response.latitude}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvLatitude"
+            android:text="@{response.longitude}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvLongitude"
+            android:text="@{response.phone}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPhone"
+            android:text="@{response.country}" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCountry"
+            android:text="@{response.state}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvState"
+            android:text="@{response.city}" />
+
+    </RelativeLayout>
+
+</layout>
